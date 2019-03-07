@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=devicewidth, initial-scale=1.0">
+<link rel="stylesheet" href="reviewwriteup.css">
+<title> Contact</title>
+<meta charset="utf-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+<script>
+$("form").submit(function(){
+ $('form').validate();
+ });
+
+function validateForm() {
+if (document.forms[0].Name.value == "" ) {
+    alert("Name field cannot be empty.");
+    return false;
+} // end if
+if (document.forms[0].userEmail.value == "") {
+    alert("email cannot be empty");
+    return false;
+} // end if
+alert("Name and Email are valid.");
+return true;
+} // end function validateForm
+
+</script>
+</head>
+<body> 
+<div class="wrapper">
+<header>
+<h1> Contact</h1>
+</header>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="reviews.html">Reviews</a></li>
+<li><a href="editorials.html">Editorials </a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+<main>
+<p>Required information is marked with an asterisk(*).</p>
+<form method="post" action="http://reviewwriteup.com" onsubmit="return validateForm();">
+
+<label for="myName">*Name</label>
+<input type="text" name="myName" id="myName" required="required">
+<label for "myEmail">*Email</label>
+<input type="email" name="myEmail" id="myEmail"  required="required" >
+<label for "mysubject"> *Subject</label>
+<input type="text" name="subject" id="mysubject" required="required">
+<label for="myComments">*Comments</label>
+<textarea name="myComments" id="myComments" rows="2" cols="20"></textarea>
+<label for="myQuestion"> Is this a question?</label>
+<input type="text" name="myQuestion" id="myQuestion">
+<input type="submit" name="mySubmit" id="mySubmit" value="Send Now"  required="required">
+<p> You can also email at for comments, questions, and further information. <br>
+<a href = "mailto:S1326521@student.mcckc.edu ">Send Email</a>
+ </p>
+
+</form>
+</main>
+<footer>
+Copyright &copy; 2019 Review Write-Up
+Chris Taylor S1326521@student.mcckc.edu
+<a href="about.html"> About </a>
+</footer>
+</div>
+</body>
+</html>
